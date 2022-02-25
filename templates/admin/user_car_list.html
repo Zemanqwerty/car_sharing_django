@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/admin_cars.css' %}">
+    <title>
+        Панель администратора
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="header_info">
+            <p>ADMIN PANEL "CH"</p>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="content">
+        <div class="user_info">
+            {{ username }}
+        </div>
+        <hr>
+        {% if car_list %}
+            {% for car in car_list %}
+                <a href="{{ car.id_car }}/view_info" class="car_block">
+                    <div class="car_brand_model">
+                        {{ car.auto_brand }} - {{ car.auto_model }}
+                    </div>
+                    <div class="car_location">
+                        г.{{ car.city }}, ул.{{ car.address }}
+                    </div>
+                    <div class="car_date">
+                        {{ car.date_of_publication }}
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <p class="null_block">Активных объявлений нет</p>
+        {% endif %}
+    </div>
+</main>
+</body>
+</html>

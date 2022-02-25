@@ -1,0 +1,357 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #fafafa;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+header{
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+}
+
+.header{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.to_index_a{
+    color: white;
+    background-color: #292932;
+    border-radius: 35px;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+main{
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.main{
+    padding: 30px;
+    width: 80%;
+    height: min-content;
+    background-color: white;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_side{
+    width: 30%;
+}
+
+.user_img{
+    background-color: #292932;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.user_img_conteiner{
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;-webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+
+}
+
+.user_img_upload{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    align-items: center;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    flex-wrap: wrap;-webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+}
+
+.user_img_input_text{
+    padding: 10px;
+}
+
+.user_img_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.user_img_input{
+    background-color: #292932;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.user_photo_up{
+    background-color: #292932;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.add_car_a{
+    width: 70%;
+    text-align: center;
+    height: auto;
+    padding: 20px;
+    color: white;
+    background-color: #292932;
+    text-decoration: none;
+    border-radius: 35px;
+    margin-top: 80px;
+}
+
+.user_name{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.right_side{
+    width: 60%;
+    height: auto;
+}
+
+.categories{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    align-items: center;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 15px;
+}
+
+.active, .apply{
+    text-decoration: none;
+    color: #5e5e5e;
+    font-size: 18px;
+}
+
+.cur{
+    color: #292932;
+    border-bottom: 2px solid #292932;
+}
+
+.active_cars{
+    width: 100%;
+    min-height: 75%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    flex-wrap: wrap;-webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+}
+
+.user_car_block{
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100px;
+    flex-wrap: nowrap;
+    display: flex;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 15px;
+}
+
+.user_car_img_block{
+    width: 160px;
+    height: 100px;
+    background-color: #292932;
+    border-radius: 15px 0 0 15px;
+    background-position: center;
+    background-size: cover;
+}
+
+.user_img_block{
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.logout_a{
+    color: #292932;
+    font-size: 15px;
+}
+
+.car_name{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.brand, .model{
+    padding: 0 10px 0 10px;
+}
+
+.car_info{
+    width: calc(100% - 100px);
+}
+
+.car_deep_info{
+    padding: 0 10px 0 20px;
+}
+
+.car_name_information{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.car_city{
+    text-align: right;
+    padding: 10px;
+}
+
+.delete_car{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color: #d93838;
+    color: white;
+    border-radius: 0 15px 15px 0;
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+}
+
+.update_car{
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c6baf;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+}
+
+.consideration{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    margin: 10px 0 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+}
+
+.left_side_cons{
+    width: 60%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.car_name_cons, .client_name_cons, .client_p_n_cons{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.right_side_cons{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accept_cons{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c6baf;
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.delete_cons{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d93838;
+    color: #fafafa;
+    border-radius: 0 15px 15px 0;
+    text-decoration: none;
+}
+
+.cons_status{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c6baf;
+    color: #fafafa;
+    border-radius: 0 15px 15px 0;
+    padding: 10px;
+}

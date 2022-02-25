@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <title>Аккаунт {{ request.user.username }}</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a href="{% url 'index_page' %}" class="to_index_a">Вернуться к поиску</a>
+    </div>
+</header>
+<main>
+    <div class="main">
+        <div class="left_side">
+            <div class="user_img_conteiner">
+                {% if user_img %}
+                    <img src="/media/{{ user_img.photo }}" alt="" class="user_img_block">
+                {% else %}
+                    <div class="user_img_upload">
+                        <form enctype="multipart/form-data" method="post" class="user_img_form" action="{% url 'user_img_upload' %}">
+                            {% csrf_token %}
+                            {{ form.photo }}
+                            <input type="submit" class="user_photo_up">
+                        </form>
+                    </div>
+                {% endif %}
+                <div class="user_name">
+                    {{ request.user.username }}<br>
+                    <a href="{% url 'logout_page' %}" class="logout_a">выйти</a>
+                </div>
+            </div>
+            <div class="create">
+                <a href="{% url 'create_car' %}" class="add_car_a">Создать объявление</a>
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="categories">
+                <a href="{% url 'account_page' %}" class="active">Мои объявления</a>
+                <a href="{% url 'my_apply' %}" class="active">Мои заявки</a>
+                <a href="{% url 'active_apply' %}" class="apply cur">Запросы</a>
+                <a href="{% url 'apply_history' %}" class="apply">История запросов</a>
+            </div>
+            <div class="active_cars">
+                {% for element in list %}
+                    <div class="consideration">
+                        <div class="left_side_cons">
+                            <div class="car_name_cons">
+                                Объявление - {{ element.id_car }}
+                            </div>
+                            <div class="client_name_cons">
+                                Заявка от {{ element.id_client }}
+                            </div>
+                            <div class="client_p_n_cons">
+                                Номер телефона заявителя: {{ element.client_phone_number }}
+                            </div>
+                        </div>
+                        <div class="right_side_cons">
+                            <a href="{{ element.id_consideration }}/accept" class="accept_cons">
+                                <img src="{% static 'img/static_image/check.png' %}" alt="">
+                            </a>
+                            <a href="{{ element.id_consideration }}/delete" class="delete_cons">
+                                <img src="{% static 'img/static_image/delete.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

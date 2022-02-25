@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <title>Аккаунт {{ request.user.username }}</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a href="{% url 'index_page' %}" class="to_index_a">Вернуться к поиску</a>
+    </div>
+</header>
+<main>
+    <div class="main">
+        <div class="left_side">
+            <div class="user_img_conteiner">
+                {% if user_img %}
+                    <img src="/media/{{ user_img.photo }}" alt="" class="user_img_block">
+                {% else %}
+                    <div class="user_img_upload">
+                        <form enctype="multipart/form-data" method="post" class="user_img_form" action="{% url 'user_img_upload' %}">
+                            {% csrf_token %}
+                            <p class="user_img_input_text">Добавить фото профиля</p>
+                            {{ form.photo }}
+                            <input type="submit" class="user_photo_up">
+                        </form>
+                    </div>
+                {% endif %}
+                <div class="user_name">
+                    {{ request.user.username }}<br>
+                    <a href="{% url 'logout_page' %}" class="logout_a">выйти</a>
+                </div>
+            </div>
+            <div class="create">
+                <a href="{% url 'create_car' %}" class="add_car_a">Создать объявление</a>
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="categories">
+                <a href="{% url 'account_page' %}" class="active cur">Мои объявления</a>
+                <a href="{% url 'my_apply' %}" class="active">Мои заявки</a>
+                <a href="{% url 'active_apply' %}" class="apply">Запросы</a>
+                <a href="{% url 'apply_history' %}" class="apply">История запросов</a>
+            </div>
+            <div class="active_cars">
+                {% if user_cars %}
+                    {% for user_car in user_cars %}
+                        <div class="user_car_block">
+                            <div class="user_car_img_block" style="background-image: url(/media/{{ user_car.car_image }})">
+                                {{ list }}
+                            </div>
+                            <div class="car_info">
+                                <div class="car_name">
+                                    <div class="car_name_information">
+                                        <p class="brand">{{ user_car.auto_brand }}</p>
+                                        <p>-</p>
+                                        <p class="model">{{ user_car.auto_model }}</p>
+                                    </div>
+                                    <p class="car_color">Цвет: {{ user_car.color }}</p>
+                                </div>
+                                <div class="car_deep_info">
+                                    {{ user_car.address}} ({{ user_car.district }})
+                                </div>
+                                <div class="car_city">
+                                    {{ user_car.city }}
+                                </div>
+                            </div>
+                            <a href="{{ user_car.id_car }}/delete" class="delete_car">
+                                <img src="{% static 'img/static_image/delete.png' %}" alt="">
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

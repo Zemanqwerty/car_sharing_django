@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/admin_car_info.css' %}">
+    <title>
+        Панель администратора
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="header_info">
+            <p>ADMIN PANEL "CH"</p>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="content">
+        <div class="user_info">
+            {{ username }}
+        </div>
+        <div class="user_info">
+            {{ car }}
+        </div>
+        <hr>
+        <br>
+        <div class="left_side">
+            {% if cons_list %}
+                <p class="notnull_block">Активные заявки</p>
+                <hr>
+                {% for cons in cons_list %}
+                    <div class="cons_block">
+                        {{ cons }} <br>
+                        {{ cons.date_of_create }} <br>
+                        {{ cons.status }}
+                    </div>
+                {% endfor %}
+                {% else %}
+                <p class="null_block">Активных запросов нет</p>
+            {% endif %}
+        </div>
+        <div class="right_side">
+            {% if deals_list %}
+                <p class="notnull_block">Активные сделки</p>
+                <hr>
+                {% for deal in deals_list %}
+                    <div class="cons_block">
+                        {{ deal }} <br>
+                        {{ deal.date_of_create }}
+                    </div>
+                {% endfor %}
+                {% else %}
+                <p class="null_block">Активных сделок нет</p>
+            {% endif %}
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/create_car.css' %}">
+    <title>Создание объявления CH</title>
+</head>
+<body>
+<main>
+    <div class="conteiner">
+        <div class="content">
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <div class="car_info_name">
+                    <input type="submit" value="Создание нового объявления" class="create_car_in">
+                </div>
+                <div class="car_info">
+                    {{ form.auto_brand }}<br>
+                    {{ form.auto_model }}<br>
+                    {{ form.year }}<br>
+                    {{ form.condition }}<br>
+                </div>
+                <div class="car_info">
+                    {{ form.day_price }}<br>
+                    {{ form.mileage }}<br>
+                    {{ form.city }}<br>
+                    {{ form.district }}<br>
+                    {{ form.address }}<br>
+                    {{ form.color }}<br>
+                    {{ form.car_image }}<br>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

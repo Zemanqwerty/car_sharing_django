@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Объявления CH
+    </title>
+    <link rel="stylesheet" href="{% static 'css/index_page.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Raleway:wght@300&family=Zen+Kaku+Gothic+New:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="header_logo">
+            <img src="{% static 'img/static_image/logo2.svg' %}" alt="АРЕНДА АВТО" class="logo">
+            <div class="logo_text">
+                CARE SHARING
+            </div>
+        </div>
+        <div class="header_form">
+            <form method="get">
+                {% csrf_token %}
+                <input type="text" placeholder="Поиск объявлений..." class="input_search" name="query">
+                <button type="submit" class="button_search">Искать</button>
+            </form>
+        </div>
+        <div class="header_text">
+            <a href="{% url 'account_page' %}" class="user_info_header">
+                <p class="user_info_text">{{ request.user }}</p>
+                {% if user_img %}
+                    <div class="user_img_block" style="background-image: url(/media/{{ user_img.photo }})">
+
+                    </div>
+                {% else %}
+                    <div class="user_img_block" style="background-image: url(/static/img/user/default.jpg)">
+
+                    </div>
+                {% endif %}
+            </a>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="main">
+        <div class="content">
+            {% for car in cars %}
+                <div class="car_block">
+                    <div class="car_image_block" style="background-image: url(/media/{{ car.car_image }})">
+
+                    </div>
+                    <div class="car_information">
+                        <div class="car_block_top">
+                            <div class="car_name_in_block">
+                                <div class="name_car">
+                                    {{ car.auto_brand }}
+                                </div>
+                                <div class="car_model">
+                                    {{ car.auto_model }} ({{ car.year }})
+                                </div>
+                            </div>
+                            <div class="car_location">
+                                <div class="car_city">
+                                    {{ car.city }} (район - {{ car.district }})
+                                </div>
+                                <div class="car_address">
+                                    {{ car.address }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="car_block_bottom">
+                            <div class="car_bottom_information">
+                                пробег - {{ car.mileage }}км.<br>
+                                цвет - {{ car.color }}
+                            </div>
+                            <div class="car_bottom_user_information">
+                                Сутки - {{ car.day_price }}р.
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{{ car.id_car }}/view" class="car_rent">
+                        <span class="rent_text">Договориться<br>об аренде</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Просмотр объявления</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/cur_car.css' %}">
+</head>
+<body>
+<header>
+    <div class="header">
+        <a href="{% url 'index_page' %}" class="to_index_a">Вернуться к поиску</a>
+    </div>
+</header>
+<main>
+    {% if response_ok %}
+        <div class="response_ok">
+            {{ response_ok }}
+        </div>
+    {% endif %}
+    {% if response_error %}
+        <div class="response_error">
+            {{ response_error }}
+        </div>
+    {% endif %}
+    <div class="content">
+        <div class="left_side_block">
+            <div class="image_block" style="background-image: url(/media/{{ car.car_image }})">
+
+            </div>
+            <form action="consideration" class="create_apply" method="post">
+                {% csrf_token %}
+                {{ form.client_phone_number }}
+                <input type="submit" value="Оставить заявку" class="button">
+            </form>
+        </div>
+        <div class="right_side_block">
+            <div class="car_name_block">
+                <div class="car_name_left">
+                    <div class="brand">
+                        {{ car.auto_brand }}
+                    </div>
+                    <div class="model">
+                        {{ car.auto_model }}
+                    </div>
+                </div>
+                <div class="car_name_right">
+                    {{ car.id_client }}
+                </div>
+            </div>
+            <hr>
+            <div class="car_info_block">
+                {{ car.condition }}
+            </div>
+            <div class="car_more_information">
+                <div class="more_inf_left">
+                    <div class="location_car">
+                        г. {{ car.city }}, (район - {{ car.district }})<br>
+                        {{ car.address }}
+                    </div>
+                    <hr class="bot_hr">
+                    <div class="mileage_car">
+                        <div class="l_m">
+                            Пробег - {{ car.mileage }}км.
+                        </div>
+                        <div class="r_m">
+                            Год выпуска - {{ car.year }}г.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

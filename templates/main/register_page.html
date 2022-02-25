@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Страница авторизации</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header">
+        <h1>Регистрация</h1>
+    </div>
+</header>
+<main>
+    <div class="main">
+        <div class="left_side">
+            <div class="logo_block">
+                <img src="{% static 'img/static_image/logo2.svg' %}" alt="" class="logo_img">
+            </div>
+            <div class="logo_text">
+                CAR<br>SHARING
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="response">
+            {{ response_to_user }}
+        </div>
+        <form method="post">
+            {% csrf_token %}
+                {{ form.email }}
+                <br>
+                {{ form.first_name }}
+                <br>
+                {{ form.last_name }}
+                <br>
+                {{ form.password }}
+                <br>
+                <input type="submit" class="login_button" value="Зарегистрироваться">
+            </form>
+
+            <div class="register_button">
+                <a href="{% url 'login_page' %}">Войти</a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

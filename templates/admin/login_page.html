@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/admin_login.css' %}">
+    <title>
+        Панель администратора
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="header_info">
+            <p>ADMIN PANEL "CH"</p>
+        </div>
+        <form method="get">
+            {% csrf_token %}
+            <input type="text" placeholder="Поиск email..." class="form_text" name="search">
+            <input type='submit' value="Искать" class="form_submit">
+        </form>
+    </div>
+</header>
+<main>
+    <div class="content">
+        <div class="info_users">
+            <div class="user_email">
+                <p>Почта</p>
+            </div>
+            <div class="user_name">
+                <p>Имя</p>
+            </div>
+            <div class="user_surname">
+                <p>Фамилия</p>
+            </div>
+            <div class="user_staff">
+                <p>Администратор</p>
+            </div>
+        </div>
+        <hr>
+        {% if users_list %}
+            {% for user in users_list %}
+                <a href="{{ user.username }}/car_list" class="user_block">
+                    <div class="user_email">
+                        <p>{{ user.username }}</p>
+                    </div>
+                    <div class="user_name">
+                        {% if user.first_name %}
+                            <p>{{ user.first_name }}</p>
+                            {% else %}
+                            <p>---</p>
+                        {% endif %}
+                    </div>
+                    <div class="user_surname">
+                        {% if user.last_name %}
+                            <p>{{ user.last_name }}</p>
+                            {% else %}
+                            <p>---</p>
+                        {% endif %}
+                    </div>
+                    <div class="user_staff">
+                        {% if user.is_staff %}
+                            <img src="{% static 'img/static_image/true.png' %}" alt="">
+                            {% else %}
+                            <img src="{% static 'img/static_image/false.png' %}" alt="">
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</main>
+</body>
+</html>
