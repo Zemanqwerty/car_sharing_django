@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #fafafa;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.conteiner{
+    margin: 0 auto;
+    width: 70%;
+    padding: 20px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.car_info_name{
+    padding: 10px;
+    width: 30%;
+}
+
+.car_info_name{
+
+}
+
+.car_info{
+    width: 35%;
+    height: 100%;
+    min-height: 346px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.car_text_input, .car_image_input{
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 7px;
+    border: 1px solid #292932;
+}
+
+@media all and (max-width: 1024px){
+    .car_info, .car_info_name{
+        width: 90%;
+    }
+}
+
+.create_car_in{
+    border: 0 solid white;
+    cursor: pointer;
+    width: auto;
+    height: 60%;
+    background-color: #292932;
+    border-radius: 15px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    color: #fafafa;
+}

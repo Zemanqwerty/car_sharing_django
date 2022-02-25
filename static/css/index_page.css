@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #fafafa;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+header{
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+}
+
+.header{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.header_form form{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.user_search{
+    width: 100%;
+}
+
+main{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.header_logo, .header_form, .header_text{
+    width: 30%;
+    height: 100%;
+}
+
+.logo{
+    height: 72px;
+    width: 72px;
+}
+
+.header_logo{
+    width: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logo_text{
+    padding: 5px;
+    color: #292932;
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+form{
+    position: relative;
+}
+
+.input_search{
+    padding: 7px;
+    border-radius: 8px 0 0 8px;
+    border: 2px #292932 solid;
+}
+
+.button_search{
+    padding: 7px;
+    border-radius: 0 8px 8px 0;
+    margin-left: -7px;
+    border: 2px #292932 solid;
+    color: white;
+    background-color: #292932;
+}
+
+.user_info_header{
+    width: 100%;
+    padding: 8px 8px 8px 8px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #292932;
+    color: white;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+.header_form{
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    width: 63%;
+    min-height: 300px;
+    border-radius: 15px;
+    background-color: white;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    font-family: 'Shippori Antique', sans-serif;
+}
+
+.user_img_block{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+}
+
+.user_img_block:hover{
+    transform: rotate(360deg);
+    transition: 0.6s;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.car_block{
+    height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fafafa;
+    margin-top: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 12px 0px rgba(34, 60, 80, 0.2);
+
+}
+
+.car_image_block{
+    height: 100%;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 0 0 15px;
+}
+
+.car_information{
+    width: calc(100% - 350px);
+    height: 100%;
+    padding: 5px 10px 5px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.car_name_in_block{
+    width: 40%;
+    height: auto;
+}
+
+.name_car{
+    font-size: 25px;
+}
+
+.car_block_top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.car_location{
+    padding-right: 10px;
+}
+
+.car_address{
+    text-align: right;
+    margin-top: 5px;
+}
+
+.car_block_bottom{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.car_rent{
+    height: 100%;
+    width: 150px;
+    background-color: #1c6baf;
+    color: #fafafa;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 15px 15px 0;
+}
+
+.car_rent span{
+    text-align: center;
+}
+
+.car_bottom_user_information{
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    align-items: self-end;
+}
